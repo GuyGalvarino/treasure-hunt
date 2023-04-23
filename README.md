@@ -10,7 +10,7 @@ It aims to access the accuracy and attention to detail of a person. The game has
 
 ## Soft-skill assessment method
 - Accuracy: For accuracy the number of interactions are taken into consideration. A minimum of 12 interactions (two for each hidden clue and two additional for the key) are required unless someone gets extremely lucky and finds the key before that (the key is activated after any hidden clue has been found and can be discovered). It ranges from 0 to 100
-- Attention to detail: Paying more attention to the details would cause less amount of time to be taken. For more than or equal to an hour, the score is set to 0. It ranges from 0 to 100
+- Attention to detail: The time taken is considered here. Paying more attention to the details would cause less amount of time to be taken. For more than or equal to an hour, the score is set to 0. It ranges from 0 to 100
 
 ## Features
 - React and MaterialUI frontend
