@@ -13,9 +13,9 @@ It aims to access the accuracy and attention to detail of a person. The game has
 - Attention to detail: Paying more attention to the details would cause less amount of time to be taken. For more than or equal to an hour, the score is set to 0. It ranges from 0 to 100
 
 ## Features
-- React frontend
+- React and MaterialUI frontend
 - Node and Express backend
-- A login and registration page
+- Login and registration pages
 - The game page
 - A stats page for showing past records and soft-skill scores
 - Token based authentication
