@@ -1,39 +1,59 @@
-import { Box, Button } from '@mui/material'
-import bg from './pexels-david-bartus-366791.jpg'
-const Home = ({ updateViews }) => {
+import { Box, Button, Typography } from '@mui/material'
+import { resetGame } from './services/comms'
+import Background from './game/Background'
+const Home = ({ setHome, setPlay, setLogin, setRegister, setStats, loggedIn, setLoggedIn, logoutUser }) => {
     const playNowHandler = () => {
-        updateViews({ mainMenu: true, home: false })
+        setHome(false)
+        setPlay(true)
     }
 
+    const loginHandler = () => {
+        setHome(false)
+        setLogin(true)
+    }
+
+    const registerHandler = () => {
+        setHome(false)
+        setRegister(true)
+    }
+
+    const statsHandler = () => {
+        setHome(false)
+        setStats(true)
+    }
+
+    const logoutHandler = () => {
+        logoutUser()
+        setLoggedIn()
+    }
+    const resetHandler = async () => {
+        await resetGame()
+    }
     return (
-        <Box display="flex" justifyContent='center' alignItems='center' sx={{
+        <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' sx={{
             height: '100%',
             width: '100%',
             background: 'black'
         }}>
-            <Box position='absolute' sx={{
-                height: '60vh',
-                width: '50vw',
-                top: '30vh',
-                left: '0vw',
-                backgroundImage: `url(${bg})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                // filter: 'blur(5px)',
-                opacity: '80%'
-            }}></Box>
-            <Box display='flex' justifyContent='center'>
-                <Button variant='contained' sx={{
-                    m: 2,
-                    p: '0.8em 1.5em',
-                    typography: 'h5',
-                    background: '#cc9900'
-                }} onClick={playNowHandler}>
-                    Play Now!
-                </Button>
-            </Box>
-        </Box >
+            <Typography variant='h1' color='gold' sx={{ m: 5 }} zIndex='1'>TREASURE HUNT</Typography>
+            {loggedIn
+                ? (<Typography variant='h3' color='gold' sx={{ m: 5 }} zIndex='1'>Welcome {loggedIn}!</Typography>)
+                : (<Typography variant='h3' color='gold' sx={{ m: 5 }} zIndex='1'>Login or Register to continue</Typography>)
+            }
+            {loggedIn
+                ? (<>
+                    <Button variant='contained' onClick={playNowHandler} sx={{ m: 2, zIndex: 1 }}>Play Now!</Button>
+                    <Button variant='contained' onClick={resetHandler} sx={{ m: 2, zIndex: 1 }}>Reset</Button>
+                    <Button variant='contained' onClick={logoutHandler} sx={{ m: 2, zIndex: 1 }}>Logout</Button>
+                    <Button variant='contained' onClick={statsHandler} sx={{ m: 2, zIndex: 1 }}>Stats</Button>
+                </>)
+                : (<>
+                    <Button variant='contained' onClick={loginHandler} sx={{ m: 2, zIndex: 1 }}>Login</Button>
+                    <Button variant='contained' onClick={registerHandler} sx={{ m: 2, zIndex: 1 }}>Register</Button>
+                </>)
+            }
+            <Background />
+        </Box>
     )
 }
 
