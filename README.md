@@ -6,7 +6,7 @@ Game: https://treasure-hunt-90rx.onrender.com/<br>
 Admin: https://treasure-hunt-90rx.onrender.com/admin
 
 ## About the project
-It aims to access the accuracy and attention to detail of a person. The game has 5 clues hidden in 5 rooms along an initial clue to get started. Each clue leads to the next clue and finally, the key to the treasure. Finding the key ends the game with a success. However, there are two dead-ends hidden in the game, clicking which immediately ends the game with a failure.
+It aims to access the accuracy and attention to detail of a person. The game has 5 clues hidden in 5 rooms along with an initial clue to get started. Each clue leads to the next clue and finally, the key to the treasure. Finding the key ends the game with a success. However, there are two dead-ends hidden in the game, clicking which immediately ends the game with a failure.
 
 ## Soft-skill assessment method
 - Accuracy: For accuracy the number of interactions are taken into consideration. A minimum of 12 interactions (two for each hidden clue and two additional for the key) are required unless someone gets extremely lucky and finds the key before that (the key is activated after any hidden clue has been found and can be discovered). It ranges from 0 to 100
